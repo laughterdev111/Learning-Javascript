@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color</title>
+<style>
+    body{
+        background-color: grey;
+    }
+</style>
+</head>
+<body>
+    <select id="change" onchange="changecolor()">
+        <option value="default">Select Color</option>
+<option value="blue">blue</option>
+<option value="green">green</option>
+
+    </select>
+    <script>
+function changecolor(){
+    const color= document.getElementById('change').value;
+switch (color) {
+case 'blue':{
+    document.body.style.backgroundColor ='blue';
+};
+break;
+case 'default' :{
+        document.body.style.backgroundColor = 'grey';
+    };
+    break;
+    case 'green' :{
+        document.body.style.backgroundColor = 'green';
+    };
+    break;
+}
+};
+    </script>
+</body>
+</html>

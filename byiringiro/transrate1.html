@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 data-key="title">Welcome</h2>
+    <select id="change" onchange="translateTo(this.value)">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+    </select>
+</body>
+<script>
+    const translatios = {
+        en:{
+            title:'Welcome'
+        },
+        fr:{
+            title:'Bienvenue'
+        },
+    };
+    function translateTo(lang){
+ let change = document.getElementById("change").value;
+    const elements = document.querySelectorAll(data-key);
+    elements.forEach (key=>  
+document.getAttribute(data-key)
+    )
+    const translation = element[lang][key]
+    };
+</script>
+</html>

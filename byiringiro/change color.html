@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="select">
+        <option value="blue">blue</option>
+        <option value="red">red</option>
+    </select>
+    <button onclick="change()">change now</button>
+    <div id="host">hhhhhhhhhhhh <br><br><br>nnnnnnnnnnnnnnnnnnnnnnnnnnnn
+    </div>
+    <script>
+function change(){
+    var color=document.getElementById("select").value;
+    var div=document.getElementById("host");
+    const store={
+        blue:"blue",
+        red:"red"
+    }
+     div.style.backgroundColor = store[color];
+    
+}
+    </script>
+</body>
+</html>

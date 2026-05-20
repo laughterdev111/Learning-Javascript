@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Divs</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            padding: 30px;
+        }
+
+        .box{
+            background-color: lightblue;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script>
+
+        // loop 5 times
+        for(let i = 1; i <= 5; i++){
+
+            // create div
+            var div = document.createElement("div");
+
+            // add class
+            div.className = "box";
+
+            // add text
+            div.innerHTML = "This is div " + i;
+
+            // put div on page
+            document.getElementById("container").appendChild(div);
+        }
+
+    </script>
+
+</body>
+</html>

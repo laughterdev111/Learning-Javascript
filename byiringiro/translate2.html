@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="paragraph">mworowe</p>
+    <select name="" id="select" onchange="change(this.value)">
+<option value="fr">france</option>
+<option value="eng" >English</option>
+        <option value="es">espanior</option>
+    </select> 
+
+    <script>
+
+var select=document.getElementById("select").value;
+
+function change(lang){
+
+switch(lang){
+case 'fr':
+    document.getElementById("paragraph").innerHTML="bonne";
+    break;
+
+    case 'eng':
+
+    document.getElementById("paragraph").innerHTML="hello";
+    break;
+
+case 'es' : 
+ document.getElementById("paragraph").innerHTML="hallo";
+}
+
+}
+
+    </script>
+</body>
+</html>

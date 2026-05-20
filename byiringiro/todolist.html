@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Todo List</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding-top: 50px;
+        }
+
+        .container{
+            background: white;
+            width: 400px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-box{
+            display: flex;
+            gap: 10px;
+        }
+
+        input{
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        button{
+            padding: 12px 18px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover{
+            background: #0056b3;
+        }
+
+        table{
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        tr{
+            background: #eef4ff;
+            transition: 0.3s;
+        }
+
+        tr:hover{
+            background: #dbe8ff;
+        }
+
+        td{
+            padding: 14px;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Todo List</h1>
+
+        <div class="input-box">
+
+            <input 
+                type="text" 
+                id="input" 
+                placeholder="Enter your task"
+            >
+
+            <button onclick="make()">
+                Add
+            </button>
+
+        </div>
+
+        <table id="table"></table>
+
+    </div>
+
+    <script>
+
+        function make(){
+            var count=1;
+
+            var input = document.getElementById("input").value;
+
+            // stop empty input
+            if(input.trim() === ""){
+                alert("Please enter a task");
+                return;
+            }
+
+            // create table row
+            var tr = document.createElement("tr");
+
+            // create table data
+            var td = document.createElement("td");
+
+            td.innerHTML = input;
+
+            // add td to tr
+            tr.appendChild(td);
+
+            // add tr to table
+            document.getElementById("table").appendChild(tr);
+
+            // clear input
+            document.getElementById("input").value = "";
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.second {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    width: 300px;
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input, select {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #4facfe;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #007bff;
+}
+
+#para {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+}
+    </style>
+
+</head>
+<body>
+    <div class="main">
+<div class="second">
+<div class="inputbox">
+    <h3>amount</h3>
+    <input type="number" id="amount">
+    <select id="from">
+       
+   <option value="USD">usd</option>  
+    <option value="EUR">EUR</option> 
+     <option value="GBP">GBP</option>  
+      <option value="INR">INR</option>
+      <OPTIon value="RWF">RWF</OPTIon>
+    </select>
+
+    <select id="to">
+<option value="RWA">RWA</option>
+<option value="USD">usd</option>
+<option value="EUR">EUR</option>
+<option value="GBP">GBP</option>
+<OPTION value="INR">INR</OPTION>
+    </select>
+
+</div>
+<button onclick="exchange()">convert</button>
+<p>result</p><br>
+<p id="para"></p>
+</div>
+
+    </div>
+    <script>
+        function exchange(){
+let amount =document.getElementById("amount").value;
+let from=document.getElementById("from").value;
+let to=document.getElementById("to").value;
+
+
+if(amount==""){
+    alert("plese filll")
+}
+var base={
+      USD: 1,
+        EUR: 0.88,
+        GBP: 0.75,
+        INR: 83.5,
+        RWF: 1420
+}
+var result=amount * base[from] / base[to];
+document.getElementById("para").innerHTML=`${amount}${from}=${result}${to}`;
+document.getElementById("amount").value="";
+}
+setInterval(function () {
+    location.reload();
+}, 1);
+    </script>
+</body>
+</html>z

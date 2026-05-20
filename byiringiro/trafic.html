@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .color-card{
+            width: 70px;
+        
+            height: 70px;
+            border-radius: 50%;
+border-top: 5px solid blue;
+        }
+
+        button{
+            background-color: blueviolet;
+            height: 50px;
+            width: 80px;
+            border-radius: 10px;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            width: 90px;
+            border: 1px solid black;
+            border-radius: 19px;
+        }
+        body{
+            justify-content: center;
+            align-items: center;
+            place-items: center;
+        }
+        #red{
+            background-color: red;
+        }
+        #yellow{
+            background-color: yellow;
+                }
+                #green{
+                    background-color: green;
+                }
+    </style>
+</head>
+<body>
+    <div class="card"><br>
+<div class="color-card" id="Red"></div><br>
+<div class="color-card" id="yellow"
+></div><br>
+        <div class="color-card" id="green"></div>
+        <p id="paragraph"></p>
+    </div><br><br><br>
+<button onclick="change('red')" id="red">red</button>
+<button onclick="change('yellow')" id="yellow">yellow</button>
+<button onclick="change('green')" id="green">green</button>
+    <button onclick="change('porpo')" id="reset">purpo</button>
+</body>
+<script>
+                    function reset(){
+                         document.getElementById("Red").style.backgroundColor="black";
+                document.getElementById("yellow").style.backgroundColor="black";
+                document.getElementById("green").style.backgroundColor="black";
+                
+                    }
+
+function change(color){
+    reset();
+                    switch (color){
+                        case 'red':
+                            document.getElementById("Red").style.backgroundColor="red";
+                            document.getElementById('paragraph').innerHTML='STOP!';
+                            document.getElementById('paragraph').style.color='red';
+                            break;
+
+                            
+                            case 'yellow':
+                         
+                            document.getElementById("yellow").style.backgroundColor="yellow";
+                            document.getElementById('paragraph').innerHTML='BE READY!';
+                            document.getElementById('paragraph').style.color='greenyellow';
+                   
+                            break;
+
+                    case 'green':
+                        document.getElementById("green").style.backgroundColor="green";
+                            document.getElementById('paragraph').innerHTML='irukanke';
+                            document.getElementById('paragraph').style.color='green';
+                            
+
+                        break;
+                        default:
+                            console.log("error");
+                            document.getElementById('paragraph').innerHTML='';
+                                    
+
+                    }
+
+}
+</script>
+</html>
